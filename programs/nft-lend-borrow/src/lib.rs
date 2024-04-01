@@ -6,7 +6,7 @@ pub use errors::ErrorCodes;
 pub use instructions::*;
 pub use states::*;
 
-declare_id!("<PLACE YOUR ADDRESS HERE>");
+declare_id!("2TGWZk99WfSZWas1WLcutWDkhbt9R3LJhQoLm22RvNT4");
 
 #[program]
 pub mod nft_lend_borrow {
@@ -28,10 +28,7 @@ pub mod nft_lend_borrow {
         ctx: Context<WithdrawOffer>,
         minimum_balance_for_rent_exemption: u64,
     ) -> Result<()> {
-        instructions::withdraw_offer::handler(
-            ctx,
-            minimum_balance_for_rent_exemption,
-        )
+        instructions::withdraw_offer::handler(ctx, minimum_balance_for_rent_exemption)
     }
 
     pub fn borrow(ctx: Context<Borrow>, minimum_balance_for_rent_exemption: u64) -> Result<()> {
